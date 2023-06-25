@@ -1,0 +1,156 @@
+.NewPost {
+  width: 100%;
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  color: #fff;
+}
+.NewPost h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+.newPostForm {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.form-group {
+  display: flex;
+  justify-content: space-between;
+}
+.row {
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+  gap: 10px;
+  padding: 0 10px;
+}
+.row input,
+.description textarea {
+  flex: 1;
+  height: 36px;
+  padding: 0 10px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.276);
+}
+input::placeholder,
+textarea::placeholder {
+  color: #ffffffab;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  gap: 10px;
+  border-radius: 3px;
+  height: 150px;
+}
+.description textarea {
+  padding: 10px;
+  width: 100%;
+}
+.btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+button {
+  border-radius: 10px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+}
+.newPostForm button:hover {
+  box-shadow: 0 0 5px #006fff;
+  border-color: #1e1e1e;
+  letter-spacing: 1px;
+  scale: 1.1;
+}
+button.add {
+  background-color: #3c3c3b;
+}
+button.cancel {
+  background-color: #f5d547;
+  color: #000;
+}
+.newPostForm input,
+.newPostForm textarea {
+  resize: none;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+}
+textarea {
+  height: 250px;
+}
+.newPostForm input:hover,
+.newPostForm input:focus,
+.newPostForm textarea:focus {
+  box-shadow: 0 0 10px #1e1e1e;
+}
+.newPostForm label {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-top: 0.5rem;
+}
+
+/*
+@media (max-width: 768px) {
+  html {
+    font-size: 10px;
+  }
+  .Header h1 {
+    font-size: 1.75rem;
+  }
+  .Header p {
+    scale: 1.1;
+  }
+  .Nav {
+    align-items: center;
+  }
+  .searchForm {
+    width: 90%;
+  }
+  .searchForm input[type="text"] {
+    font-size: 1.35rem;
+  }
+  .Nav li {
+    font-size: 1.35rem;
+  }
+  .Nav li:hover a,
+  .Nav li:focus a {
+    font-weight: 500;
+  }
+  .Home {
+    text-align: center;
+  }
+  .Home p {
+    font-size: 1.25rem;
+  }
+  .NewPost h2 {
+    font-size: 1.75rem;
+  }
+  .newPostForm input[type="text"],
+  .newPostForm textarea {
+    font-size: 1.5rem;
+  }
+  .newPostForm textarea {
+    height: 100px;
+  }
+  .newPostForm label {
+    font-size: 1.35rem;
+  }
+  .PostPage p {
+    font-size: 1.25rem;
+  }
+}
+*/
