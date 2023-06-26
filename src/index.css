@@ -20,15 +20,30 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
-  background: #022f6c;
+  background: rgb(1, 48, 112);
   background: linear-gradient(
-    90deg,
-    rgba(2, 47, 108, 1) 0%,
-    rgba(2, 140, 158, 1) 50%,
-    rgba(8, 126, 224, 1) 100%
+    140deg,
+    rgb(0, 40, 96) 0%,
+    rgb(0, 40, 96) 25%,
+    rgba(0, 124, 149, 1) 52%,
+    rgba(18, 187, 245, 1) 100%
   );
   background-repeat: no-repeat;
-  /* background-size: 200% 200%; */
+  background-size: 250% 250%;
+  animation: bg 6s linear infinite;
+}
+@keyframes bg {
+  0%,
+  100% {
+    background-position: 0%;
+  }
+  25%,
+  75% {
+    background-position: 30%;
+  }
+  50% {
+    background-position: 60%;
+  }
 }
 #root {
   flex-grow: 1;
