@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import DataContext from "../../context/DataContext";
 
-const Post = ({ book }) => {
+const HomeBook = ({ book }) => {
   let { handleSave } = useContext(DataContext);
   return (
-    <article className="post">
+    <article className="book">
       <Link to={`book/${book.id}`} className="card">
         <img src={book.image} alt="..." className="image" />
         <h2>{book.title}</h2>
@@ -19,4 +19,4 @@ const Post = ({ book }) => {
   );
 };
 
-export default Post;
+export default HomeBook;

@@ -8,8 +8,8 @@ const ViewBook = () => {
   let { id } = useParams();
   let book = books.find((book) => book.id.toString() === id);
   return (
-    <main className="PostPage">
-      <article className="post">
+    <main className="BookPage">
+      <article className="book">
         {book && (
           <>
             <div className="left">
@@ -18,8 +18,8 @@ const ViewBook = () => {
             <div className="right">
               <h2>{book.title}</h2>
               <p className="author">By {book.author}</p>
-              <p className="postDate">Published on :-{book.date}</p>
-              <p className="postBody">Description :- {book.body} </p>
+              <p className="date">Published on :-{book.date}</p>
+              <p className="description">Description :- {book.body} </p>
               <div className="btn-group">
                 <Link to={`/savedbooks`}>
                   <button className="editButton">Back</button>

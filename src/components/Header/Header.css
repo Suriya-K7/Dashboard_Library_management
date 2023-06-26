@@ -6,7 +6,7 @@
   align-items: center;
 }
 .Header h1 {
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 500;
   width: auto;
   padding: 0 10px;
@@ -18,26 +18,9 @@
   font-weight: 700;
   padding-right: 5px;
 }
-.Header p {
-  display: inline-block;
-  background-color: #ffffff80;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-.Header svg {
-  font-size: 2.5rem;
-}
 @media (max-width: 992px) {
-  .Header h1 {
-    font-size: 1.75rem;
-  }
-  .Header p {
-    width: 50px;
-    height: 50px;
+  .Header {
+    padding: 16px;
   }
 }
 @media (max-width: 600px) {
@@ -46,7 +29,6 @@
       "header header"
       "nav nav";
     place-content: center;
-    position: relative;
   }
   .Header h1 {
     width: 100%;
@@ -54,37 +36,10 @@
     grid-area: header;
     align-self: center;
   }
-  .Header p {
-    position: absolute;
-    left: 90%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-  }
-  .Header svg {
-    font-size: 3rem;
-  }
 }
 @media (max-width: 500px) {
   .Header {
     gap: 10px;
     padding-bottom: 0;
-  }
-  .Header p {
-    position: absolute;
-    left: 90%;
-    top: 30%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-  }
-  .Header svg {
-    font-size: 2rem;
-  }
-}
-@media (max-width: 500px) {
-  .Header p {
-    left: 85%;
   }
 }

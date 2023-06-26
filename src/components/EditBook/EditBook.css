@@ -1,35 +1,36 @@
-.PostPage {
+.Bookpage {
   width: 100%;
   height: auto;
   padding: 1rem;
 }
-.PostPage .post {
+.BookPage .book {
   display: flex;
+  width: 98vw;
 }
-.PostPage .post .left {
+.BookPage .book .left {
   width: 375px;
   object-fit: contain;
   text-align: center;
 }
-.PostPage .post .left:hover img {
+.BookPage .book .left:hover img {
   filter: drop-shadow(0 0 5px #fff);
 }
-.PostPage .post .left img {
+.BookPage .book .left img {
   height: 100%;
   transition: 0.3s;
   border-radius: 5px;
 }
-.PostPage .post .right {
+.BookPage .book .right {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   gap: 10px;
 }
-.PostPage .post .right h2 {
+.BookPage .book .right h2 {
   font-size: 24px;
 }
-.PostPage button {
+.BookPage button {
   border-radius: 5px;
   border: none;
   outline: none;
@@ -60,22 +61,22 @@
   scale: 1.1;
 }
 @media (max-width: 992px) {
-  .PostPage .post {
+  .BookPage .book {
     gap: 10px;
   }
-  .PostPage p {
+  .BookPage p {
     font-size: 1.25rem;
   }
-  .PostPage .post .left {
+  .BookPage .book .left {
     width: auto;
   }
-  .PostPage .post .right {
+  .BookPage .book .right {
     justify-content: start;
     gap: 20px;
   }
 }
 @media (max-width: 768px) {
-  .PostPage .post .right {
+  .BookPage .book .right {
     gap: 10px;
   }
 }
@@ -83,7 +84,7 @@
   .left {
     height: 300px;
   }
-  .PostPage .post {
+  .BookPage .book {
     height: auto;
     display: flex;
     flex-direction: column;

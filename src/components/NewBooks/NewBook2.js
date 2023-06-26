@@ -1,15 +1,12 @@
 import React, { useContext } from "react";
-import { useParams } from "react-router-dom";
 import DataContext from "../../context/DataContext";
-import "./EditBook.css";
+import "./NewBook.css";
 import { Form, Formik } from "formik";
-import InputField from "../NewBooks/InputField";
+import InputField from "./InputField";
 import * as Yup from "yup";
 
-const EditBook = () => {
-  let { handleEdit, handleCancel, books } = useContext(DataContext);
-  let { id } = useParams();
-  let book = books.find((book) => book.id.toString() === id);
+const NewBook2 = () => {
+  let { handleSubmit, handleCancel } = useContext(DataContext);
   const validate = Yup.object({
     title: Yup.string()
       .min(5, "Must contain 5 character or more")
@@ -27,21 +24,20 @@ const EditBook = () => {
     <main className="NewBook">
       <Formik
         initialValues={{
-          id: book.id,
-          title: book.title,
-          author: book.author,
-          date: book.date,
-          image: book.image,
-          description: book.body,
+          title: "",
+          author: "",
+          date: "",
+          image: "",
+          description: "",
         }}
         validationSchema={validate}
         onSubmit={(values) => {
-          handleEdit(values);
+          handleSubmit(values);
         }}
       >
         {(formik) => (
           <>
-            <h2>Edit Book Details</h2>
+            <h2>New Book</h2>
             <Form className="newBookForm">
               <div className="form-group">
                 <div className="row">
@@ -56,7 +52,7 @@ const EditBook = () => {
                   <InputField label="Date" name="date" type="date" />
                 </div>
                 <div className="row">
-                  <InputField label="Image" name="image" type="url" />
+                  <InputField label="Image URL" name="image" type="url" />
                 </div>
               </div>
               <div className="description">
@@ -71,7 +67,7 @@ const EditBook = () => {
                   Cancel
                 </button>
                 <button type="submit" className="add">
-                  Update
+                  Add Books
                 </button>
               </div>
             </Form>
@@ -82,4 +78,4 @@ const EditBook = () => {
   );
 };
 
-export default EditBook;
+export default NewBook2;

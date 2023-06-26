@@ -20,13 +20,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
-  background: rgb(2, 47, 108);
+  background: #022f6c;
   background: linear-gradient(
     90deg,
     rgba(2, 47, 108, 1) 0%,
     rgba(2, 140, 158, 1) 50%,
     rgba(8, 126, 224, 1) 100%
   );
+  background-repeat: no-repeat;
+  /* background-size: 200% 200%; */
 }
 #root {
   flex-grow: 1;
@@ -51,7 +53,6 @@ body {
   place-content: center;
   color: #fff;
 }
-.About,
 .Missing {
   width: 100%;
   flex-grow: 1;
@@ -59,22 +60,14 @@ body {
   overflow-y: auto;
   background-color: #34495e;
 }
-.Missing h2,
-.About h2 {
+.Missing h2 {
   font-size: 1.75rem;
   font-weight: 500;
 }
-.Missing p,
-.About p {
-  font-size: 1.25rem;
-}
 .Missing p {
+  font-size: 1.25rem;
   margin-top: 1rem;
 }
-.statusMsg {
-  margin-top: 2rem;
-}
-
 /*media queries*/
 @media (max-width: 992px) {
   html {

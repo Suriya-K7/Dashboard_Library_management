@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import DataContext from "../../context/DataContext";
 import "./NewBook.css";
-import { Form, Formik } from "formik";
 
 const NewBook = () => {
   let {
@@ -27,11 +26,6 @@ const NewBook = () => {
   }, [setAuthor, setDate, setDescription, setImage, setTitle]);
   return (
     <main className="NewBook">
-      <Formik>
-        {(formik) => {
-          console.log(formik);
-        }}
-      </Formik>
       <h2>New Book</h2>
       <form onSubmit={handleSubmit} className="newBookForm">
         <div className="form-group">

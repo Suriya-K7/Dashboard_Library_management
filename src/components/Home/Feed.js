@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Post from "./Post";
+import HomeBook from "./HomeBook";
 import DataContext from "../../context/DataContext";
 
 const Feed = () => {
@@ -7,7 +7,7 @@ const Feed = () => {
   return (
     <>
       {searchResults.map((book) => (
-        <Post key={book.id} book={book} />
+        <HomeBook key={book.id} book={book} />
       ))}
     </>
   );

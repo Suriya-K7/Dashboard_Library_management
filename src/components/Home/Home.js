@@ -10,7 +10,7 @@ const Home = () => {
       {searchResults.length ? (
         <Feed />
       ) : (
-        <p style={{ marginTop: "2rem" }}>No posts to display.</p>
+        <p style={{ marginTop: "2rem" }}>No Books to display.</p>
       )}
     </main>
   );
