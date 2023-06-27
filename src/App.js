@@ -3,7 +3,7 @@ import SavedBooks from "./components/SavedBooks/SavedBooks";
 import ViewBook from "./components/SavedBooks/ViewBook";
 import Footer from "./components/Footer";
 import Missing from "./components/Missing";
-import NewBook2 from "./components/NewBooks/NewBook2";
+import NewBook from "./components/NewBooks/NewBook";
 import Book from "./components/EditBook/Book";
 import EditBook from "./components/EditBook/EditBook";
 import { Route, Routes } from "react-router-dom";
@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="book">
-            <Route index element={<NewBook2 />} />
+            <Route index element={<NewBook />} />
             <Route path=":id" element={<Book />} />
           </Route>
           <Route path="/edit/:id" element={<EditBook />} />

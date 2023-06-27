@@ -1,110 +1,79 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import DataContext from "../../context/DataContext";
 import "./NewBook.css";
 import { Form, Formik } from "formik";
+import InputField from "./InputField";
+import * as Yup from "yup";
 
 const NewBook = () => {
-  let {
-    handleSubmit,
-    setDescription,
-    description,
-    title,
-    setTitle,
-    author,
-    setAuthor,
-    date,
-    setDate,
-    image,
-    setImage,
-    handleCancel,
-  } = useContext(DataContext);
-  useEffect(() => {
-    setTitle("");
-    setAuthor("");
-    setDate("");
-    setImage("");
-    setDescription("");
-  }, [setAuthor, setDate, setDescription, setImage, setTitle]);
+  let { handleSubmit, handleCancel } = useContext(DataContext);
+  const validate = Yup.object({
+    title: Yup.string()
+      .min(5, "Must contain 5 character or more")
+      .required("Required!"),
+    author: Yup.string()
+      .min(5, "Must contain 5 character or more")
+      .required("Required!"),
+    date: Yup.string().required("required!"),
+    image: Yup.string().url("Invalid URL").required("Required!"),
+    description: Yup.string()
+      .min(15, "Must contain 15 character or more")
+      .required("Required!"),
+  });
   return (
     <main className="NewBook">
-      <Formik>
-        {(formik) => {
-          console.log(formik);
+      <Formik
+        initialValues={{
+          title: "",
+          author: "",
+          date: "",
+          image: "",
+          description: "",
         }}
+        validationSchema={validate}
+        onSubmit={(values) => {
+          handleSubmit(values);
+        }}
+      >
+        {(formik) => (
+          <>
+            <h2>New Book</h2>
+            <Form className="newBookForm">
+              <div className="form-group">
+                <div className="row">
+                  <InputField label="Title" name="title" type="text" />
+                </div>
+                <div className="row">
+                  <InputField label="Author" name="author" type="text" />
+                </div>
+              </div>
+              <div className="form-group">
+                <div className="row">
+                  <InputField label="Date" name="date" type="date" />
+                </div>
+                <div className="row">
+                  <InputField label="Image URL" name="image" type="url" />
+                </div>
+              </div>
+              <div className="description">
+                <InputField
+                  label="Description"
+                  name="description"
+                  type="textarea"
+                />
+              </div>
+              <div className="btn-group">
+                <button type="button" onClick={handleCancel} className="cancel">
+                  Cancel
+                </button>
+                <button type="submit" className="add">
+                  Add Books
+                </button>
+              </div>
+            </Form>
+          </>
+        )}
       </Formik>
-      <h2>New Book</h2>
-      <form onSubmit={handleSubmit} className="newBookForm">
-        <div className="form-group">
-          <div className="row">
-            <label htmlFor="title">Title:</label>
-            <input
-              type="text"
-              placeholder="Title"
-              id="title"
-              required
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-            <p>required</p>
-          </div>
-          <div className="row">
-            <label htmlFor="author">Author:</label>
-            <input
-              type="text"
-              placeholder="Author"
-              id="author"
-              required
-              value={author}
-              onChange={(e) => setAuthor(e.target.value)}
-            />
-            <p>required</p>
-          </div>
-        </div>
-        <div className="form-group">
-          <div className="row">
-            <label htmlFor="date">Published Date:</label>
-            <input
-              type="date"
-              id="date"
-              required
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-            />
-            <p>required</p>
-          </div>
-          <div className="row">
-            <label htmlFor="image">Image:</label>
-            <input
-              type="url"
-              placeholder="Image URL"
-              id="Image"
-              required
-              value={image}
-              onChange={(e) => setImage(e.target.value)}
-            />
-            <p>required</p>
-          </div>
-        </div>
-        <div className="description">
-          <label htmlFor="description">Description :</label>
-          <textarea
-            placeholder="Description"
-            id="description"
-            required
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-          <p>required</p>
-        </div>
-        <div className="btn-group">
-          <button type="submit" className="cancel" onClick={handleCancel}>
-            Cancel
-          </button>
-          <button type="submit" className="add">
-            Add Books
-          </button>
-        </div>
-      </form>
     </main>
   );
 };

@@ -57,6 +57,10 @@
   font-size: 1rem;
   padding: 0.5rem;
 }
+.book .btnSave.disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
 .book .btnSave:hover {
   letter-spacing: 1px;
   padding: 15px;
